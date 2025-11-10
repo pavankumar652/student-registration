@@ -1,0 +1,152 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prolivra Academy — Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="form-area">
+      <div class="brand">
+        <img src="assets/logo.jpeg" alt="Prolivra Academy Logo" id="logo">
+        <div>
+          <h1>Prolivra Academy</h1>
+          <p>Prolivra Academy is a forward-thinking technology training platform dedicated to empowering the next generation of tech innovators.</p>
+        </div>
+      </div>
+
+      <h2>Student Registration Form</h2>
+      <p class="lead">Please fill out the form below to register. Fields marked with * are required.</p>
+
+<form id="regForm" action="https://script.google.com/macros/s/AKfycby9Y4mfxPONbkfWUP-Hm_M7ZebMBdEz3l1BRBXKgWOTW_IWS5DpVFdHGIjJZwFseScj/exec" method="POST">
+        <div class="grid">
+          <div>
+            <label for="fullName">Full Name *</label>
+            <input id="fullName" name="fullName" type="text" required placeholder="Enter full name" />
+          </div>
+
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div>
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+91 0000 0000 00" />
+          </div>
+
+          <div>
+            <label for="dob">Date of Birth</label>
+            <input id="dob" name="dob" type="date" />
+          </div>
+
+          <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">Choose</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="qualification">Highest Qualification</label>
+            <input id="qualification" name="qualification" type="text" placeholder="e.g. B.Tech, B.E, B.SC" />
+          </div>
+
+          <div>
+            <label for="college">College / University</label>
+            <input id="college" name="college" type="text" placeholder="Institution name" />
+          </div>
+
+          <div class="full">
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" placeholder="Street, City, State, PIN Code" />
+          </div>
+
+          <div>
+            <label for="course">Course Interested In *</label>
+            <select id="course" name="course" required>
+              <option value="">Select course</option>
+              <option>Html, Css, JavaScript</option>
+              <option>Angular & Vue.js</option>
+              <option>Reactjs</option>
+              <option>Python</option>
+              <option>Node.js</option>
+              <option>PHP</option>
+              <option>MySQL</option>
+              <option>Django</option>
+              <option>Restful APIs</option>
+              <option>Full Stack Development</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mode">Mode of Learning</label>
+            <select id="mode" name="mode">
+            <option value="">Mode of Class</option>
+              <option>Online Classes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="batch">Preferred Batch Timing</label>
+            <select id="batch" name="batch">
+            <option value="">Select Batch Timings</option>
+              <option>Morning (70:00AM - 08:45AM)</option>
+              <option>Evening (8:00PM - 9:30PM)</option>
+              <option>Weekends (7:30PM - 9:00PM)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="emergency">Emergency Contact</label>
+            <input id="emergency" name="emergency" type="tel" placeholder="Emergency contact number" />
+          </div>
+
+          <div>
+            <label>Upload Photo / Upload Resume</label>
+            <div class="file-input">
+              <label class="file-label" for="photo">Choose file</label>
+              <input id="photo" name="photo" type="file" accept="image/*,application/pdf" />
+              <img src="" alt="preview" class="thumb" id="thumb" style="display:none"/>
+            </div>
+          </div>
+
+          <div class="full">
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" placeholder="Any other information you'd like to share"></textarea>
+          </div>
+
+          <div class="full">
+            <label>
+              <input type="checkbox" id="agree" required /> I confirm that the information given is true and I accept the <a href="#" style="color:var(--accent)">terms & conditions</a>.
+            </label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+
+      <p class="note" style="margin-top:14px">We respect your privacy. Your information will be used only for admission and communication purposes.</p>
+    </div>
+
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div style="font-size:36px">🎉</div>
+      <h4 id="modalTitle">Thank you!</h4>
+      <p id="modalMsg">Your message was sent successfully. We'll contact you soon.</p>
+      <div style="margin-top:12px">
+        <button id="closeModal" class="btn btn-primary">Close</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>   

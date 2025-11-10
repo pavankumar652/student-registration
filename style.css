@@ -1,0 +1,309 @@
+/* ===== GENERAL STYLES ===== */
+:root {
+  --primary: #080808;
+  --secondary: #2575fc;
+  --accent: #00e0ff;
+  --bg-gradient: linear-gradient(135deg, #d9bdf8, #9bbffd);
+  --muted: #cfd6e1;
+  --text-dark: #1a1a1a;
+  --form-bg: #f7f9fdfa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: var(--form-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 40px 30px;
+}
+
+/* ===== BRAND HEADER ===== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+#logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.brand h1 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== FORM AREA ===== */
+.form-area h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.form-area .lead {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* ===== GRID LAYOUT ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+}
+
+/* ===== FILE INPUT ===== */
+.file-input {
+  position: relative;
+}
+
+.file-label {
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.file-label:hover {
+  background: var(--secondary);
+}
+
+.file-input input[type="file"] {
+  display: none;
+}
+
+.thumb {
+  margin-top: 10px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== Checkbox Alignment ===== */
+.grid .full label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.grid .full label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+
+/* ===== BUTTONS ===== */
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--bg-gradient);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  margin-left: 8px;
+}
+
+.btn-ghost:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+/* ===== NOTE TEXT ===== */
+.note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 15px;
+}
+
+/* ===== MODAL POPUP ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal h4 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+.modal p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+  .brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container {
+    padding: 25px 18px;
+  }
+
+  .form-area h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 400px;
+}
